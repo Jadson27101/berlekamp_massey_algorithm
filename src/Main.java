@@ -4,10 +4,9 @@ import java.util.Arrays;
 public class Main {
     private byte b[], t[], c[];
     private int N, L, m;
-    private int arrLength;
-    private byte s[] = {1,1,1,0,1,1,0,0,0,0,1,0,1};
+    private byte s[] = {1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1};
+
     private void registryTester(int length) {
-        arrLength = length;
         b = new byte[length];
         c = new byte[length];
         t = new byte[length];
@@ -19,7 +18,7 @@ public class Main {
         m = -1;
     }
 
-    private void run() {
+    private void run(int arrLength) {
         int d;
         while (N < s.length) {
             d = 0;
@@ -42,10 +41,11 @@ public class Main {
             N++;
         }
     }
-    public static void main(String[] args){
+
+    public static void main(String[] args) {
         Main m = new Main();
         m.registryTester(13);
-        m.run();
+        m.run(13);
         System.out.println(Arrays.toString(m.c));
     }
 }
